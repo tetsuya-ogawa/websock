@@ -1,8 +1,9 @@
-h1
-| チャットルーム
-ul#messages
-  = render @messages
-
-from
-  label say something
-  input type="text" data-behavior="room_input"
+.room-header
+  = @room.name
+.room-body
+  ul#messages
+    = render @messages
+.room-footer style="bottom:0px;width:100%;"
+  from
+    label say something
+    input type="text" data-behavior="room_input"

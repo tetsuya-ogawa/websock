@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
 
   def new
+    render :layout => 'login'
     @user = User.new
   end
 

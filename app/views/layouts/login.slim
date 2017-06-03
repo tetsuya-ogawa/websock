@@ -1,23 +1,16 @@
 doctype html
 html style="height:100%;"
   head
-    title Websock
+    title Websock | ログイン
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body style="height:100%;"
-    header style="width 100%;background-color:rgb(62,49,60);top:0px;left:0px;right:0px;height:130px;"
-      = render 'layouts/header'
-
-    main style="height:100%;"
+    main
       - if flash.present?
         - flash.each do |message_type, message|
           = content_tag(:div, message, class: "alert alert-#{message_type}")
 
-      .room-list style="width:250px;float:left;rgb(62,49,60);height:100%;"
-        = render 'layouts/room_list'
-
-      .room-main-container style="width: calc(100% - 250px);float:right;rgb(62,49,60);height:100%;"
-        = yield
+      = yield
