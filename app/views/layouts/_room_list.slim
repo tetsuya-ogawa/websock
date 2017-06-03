@@ -1,0 +1,5 @@
+.new-room
+  = link_to 'New Room', new_room_path
+ul
+  - current_user.rooms.each do |room|
+    li = link_to room.name, room_path(room)
