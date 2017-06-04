@@ -17,6 +17,7 @@ gem 'ridgepole'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'skyblue_rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

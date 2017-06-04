@@ -1,9 +1,8 @@
 .room-header
   = @room.name
-.room-body
+.room-body style="overflow: auto;max-height:calc(100% - 85px);"
   ul#messages
     = render @messages
-.room-footer style="bottom:0px;width:100%;"
+.room-footer style="bottom:0px;right:20px;left:20px;position:absolute;"
   from
-    label say something
-    input type="text" data-behavior="room_input"
+    textarea data-behavior="room_input" rows="2" wrap="hard" class="form-control" style="min-height:30px;"
