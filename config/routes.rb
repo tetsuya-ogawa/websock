@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+  
   get :signup, to: 'users#new'
 
   resources :sessions, only: :create
