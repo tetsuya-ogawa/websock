@@ -127,6 +127,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redis (3.3.3)
     ridgepole (0.6.5)
       activerecord (>= 4.2, < 6)
       diffy
@@ -200,6 +201,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.0)
+  redis
   ridgepole
   sass-rails (~> 5.0)
   selenium-webdriver
