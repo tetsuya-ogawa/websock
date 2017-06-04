@@ -2,10 +2,12 @@ doctype html
 html style="height:100vh;"
   head
     title Websock
+    = action_cable_meta_tag
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta name="viewport" content="width=device-width,initial-scale=1.0"
 
   body style="height:100%;"
     / header style="width 100%;background-color:rgb(62,49,60);top:0px;left:0px;right:0px;height:130px;"
@@ -16,7 +18,7 @@ html style="height:100vh;"
         - flash.each do |message_type, message|
           = content_tag(:div, message, class: "alert alert-#{message_type}")
 
-      .room-list style="width:250px;float:left;background-color:rgb(210,210,210);height:100%;"
+      .room-list style="width:250px;float:left;background-color:rgb(62,49,60);height:100%;"
         = render 'layouts/room_list'
 
       .room-main-container style="width:calc(100% - 250px);float:right;rgb(62,49,60);height:100%;padding: 0 20px;position:relative;"

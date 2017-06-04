@@ -23,3 +23,14 @@
  .message:hover{
    background-color: #eee;
  }
+
+li.room{
+  list-style:none;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left: 10px;
+}
+
+li.room:hover{
+  background-color: #4c9689;
+}

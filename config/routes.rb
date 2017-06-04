@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete :logout, to: 'sessions#destroy'
   resources :rooms
   root to: 'rooms#index'
+  mount ActionCable.server => '/cable'
 end

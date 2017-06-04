@@ -94,6 +94,7 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
+    pg (0.20.0)
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.2)
@@ -126,6 +127,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redis (3.3.3)
     ridgepole (0.6.5)
       activerecord (>= 4.2, < 6)
       diffy
@@ -196,8 +198,10 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.0)
+  redis
   ridgepole
   sass-rails (~> 5.0)
   selenium-webdriver
