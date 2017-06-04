@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
     @room.assign_attributes(room_params)
     if @room.save
       flash[:notice] = '部屋を作成しました'
+      current_user.user_rooms.create(room: @room)
       redirect_to room_path(@room)
     else
       flash[:alert] = '部屋を作成できませんでした'
