@@ -20,6 +20,7 @@ gem 'skyblue_rails'
 
 group :production do
   gem 'pg'
+  gem 'redis'
 end
 
 group :development, :test do
