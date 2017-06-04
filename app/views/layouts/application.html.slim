@@ -1,5 +1,5 @@
 doctype html
-html style="height:100%;"
+html style="height:100vh;"
   head
     title Websock
     = csrf_meta_tags
@@ -8,16 +8,16 @@ html style="height:100%;"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body style="height:100%;"
-    header style="width 100%;background-color:rgb(62,49,60);top:0px;left:0px;right:0px;height:130px;"
-      = render 'layouts/header'
+    / header style="width 100%;background-color:rgb(62,49,60);top:0px;left:0px;right:0px;height:130px;"
+    /   = render 'layouts/header'
 
     main style="height:100%;"
       - if flash.present?
         - flash.each do |message_type, message|
           = content_tag(:div, message, class: "alert alert-#{message_type}")
 
-      .room-list style="width:250px;float:left;rgb(62,49,60);height:100%;"
+      .room-list style="width:250px;float:left;background-color:rgb(210,210,210);height:100%;"
         = render 'layouts/room_list'
 
-      .room-main-container style="width: calc(100% - 250px);float:right;rgb(62,49,60);height:100%;"
+      .room-main-container style="width:calc(100% - 250px);float:right;rgb(62,49,60);height:100%;padding: 0 20px;position:relative;"
         = yield

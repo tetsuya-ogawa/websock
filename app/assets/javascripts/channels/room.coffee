@@ -12,7 +12,10 @@ App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $(l
 
 
 $(document).on 'keypress', '[data-behavior~=room_input]', (event) ->
-  if event.keyCode is 13 # return = send
-    App.room.speak event.target.value, $(location)[0].pathname.split('/')[2]
-    event.target.value = ''
-    event.preventDefault()
+  if event.keyCode == 13
+    if event.shiftKey
+      $.noop()
+    else
+      App.room.speak event.target.value, $(location)[0].pathname.split('/')[2]
+      event.target.value = ''
+      event.preventDefault()

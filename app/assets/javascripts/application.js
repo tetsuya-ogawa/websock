@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require skyblue/ie
 //= require_tree .
