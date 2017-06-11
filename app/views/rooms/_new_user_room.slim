@@ -1,0 +1,4 @@
+.create-user-room style="display:none;position:relative;"
+  .create-user-room-overlay
+  = form_tag room_users_path(@room), method: :post do
+    = text_field_tag :name, '', class: 'form-control create-user-room-form'

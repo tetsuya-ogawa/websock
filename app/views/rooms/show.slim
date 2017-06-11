@@ -1,8 +1,22 @@
 .room-header
-  = @room.name
+  .room-header-name.inline-block
+    = @room.name
+  .room-header-right.inline-block.float-right
+    li.float-right.padding-x-5 = link_to 'ユーザー追加', '#',{ id: 'modal-open', class: 'button-link' }
+    li.float-right.padding-x-5 ルーム編集
 .room-body style="overflow: auto;max-height:calc(100% - 85px);"
   ul#messages
     = render @messages
 .room-footer style="bottom:0px;right:20px;left:20px;position:absolute;"
   from
     textarea data-behavior="room_input" rows="2" wrap="hard" class="form-control" style="min-height:30px;"
+
+= render 'new_user_room'
+
+javascript:
+  / $('#modal-open').on('click', function(){
+  /   $('.create-user-room').fadeIn(100);
+  / });
+  / $('.create-user-room-overlay').on('click', function(){
+  /   $('.create-user-room').fadeOut(100);
+  / });

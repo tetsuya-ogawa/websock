@@ -15,14 +15,27 @@
  *= require_self
  */
 
+li{
+  list-style:none;
+}
+
  .message{
    list-style:none;
-   padding: 15px 0px;
+   padding: 5px 0px;
  }
 
  .message:hover{
    background-color: #eee;
  }
+
+ .message-user{
+   font-weight: bolder;
+ }
+
+ .room-header{
+   padding: 15px 0px;
+ }
+
 
 li.room{
   list-style:none;
@@ -33,4 +46,19 @@ li.room{
 
 li.room:hover{
   background-color: #4c9689;
+}
+
+.create-user-room-form{
+  z-index: 99;
+}
+
+.create-user-room-overlay{
+  background: black;
+  opacity: 0.75;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*position: fixed;*/
+  z-index: 0;
 }
