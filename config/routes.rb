@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get :scraping, to: 'scraping#index'
+  post :scraping, to: 'scraping#create'
   get :signup, to: 'users#new'
 
   resources :sessions, only: :create

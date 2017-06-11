@@ -1,0 +1,29 @@
+.scraping style="padding:40px"
+  h1 style="text-align:center" Google Search Scraping
+  = form_tag scraping_path, method: :post do
+    .text-center
+      = text_field_tag :keyword, '', { class: 'form-control', style: 'margin: 30px 0;width:60%' }
+    .text-center style="margin: 10px 0"
+      label.fancy-radio.inline-block.margin-x-30
+        = radio_button_tag :number, nil
+        span 1ページ
+      label.fancy-radio.inline-block.margin-x-30
+        = radio_button_tag :number, 3
+        span 3つ
+      label.fancy-radio.inline-block.margin-x-30
+        = radio_button_tag :number, 5
+        span 5つ
+    .text-center style="margin: 30px 0"
+      = submit_tag 'scraping!', {class: 'btn btn-success btn-empty'}
+
+  / - if @result
+  /   table style="width:100%"
+  /     tr
+  /       th タイトル
+  /       th URL
+  /       th メタディスクリプション
+  /     - @result.each do |r|
+  /       tr
+  /         td = r[:title]
+  /         td = r[:url]
+  /         td = r[:discription]

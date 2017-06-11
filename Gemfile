@@ -17,6 +17,9 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'skyblue_rails'
+gem 'torimochi'
+gem 'google_drive'
+gem 'oauth2'
 
 group :production do
   gem 'pg'
