@@ -11,7 +11,7 @@ class ScrapingController < ApplicationController
   end
 
   def create
-    @number = params[:number].to_i
+    @number = params[:number].to_i == 0 ? nil : params[:number].to_i
     wite_to_spreadsheet(params[:keyword])
     render :index
   end
@@ -50,8 +50,9 @@ class ScrapingController < ApplicationController
     hashes = []
     torimochi = Torimochi.new
     torimochi.search_by(keyword)
-    torimochi.scraping('div.g', 3) do |g|
+    torimochi.scraping('div.g', @number) do |g|
       hashes << {
+                 'キーワード' => keyword,
                  'タイトル' => g.title,
                  'URL' => g.url,
                  'メタディスクリプション' => g.discription
